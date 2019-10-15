@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="gap5" type="dimen">5dp</item>
+    <item name="gap10" type="dimen">10dp</item>
+    <item name="gap20" type="dimen">20dp</item>
+    <item name="subtitleltrSpace" type="dimen">0.25</item>
+</resources>

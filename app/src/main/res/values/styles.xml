@@ -1,0 +1,21 @@
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/secondaryColor</item>
+        <item name="android:navigationBarColor">@color/secondaryColor</item>
+        <item name="colorOnPrimary">@color/colorAccent</item>
+    </style>
+
+    <style name="tabTheme" parent="Widget.MaterialComponents.TabLayout.Colored">
+        <item name="android:background">@null</item>
+        <item name="tabIndicatorColor">@color/secondaryColor</item>
+        <item name="tabRippleColor">@null</item>
+    </style>
+
+    <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/primaryColor</item>
+    </style>
+
+</resources>

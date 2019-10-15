@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shift</string>
+    <string name="title_weather">Ilm</string>
+    <string name="estonia">Estonia</string>
+    <string name="day">Päev</string>
+    <string name="night">Öö</string>
+    <string name="ohnoo">oh noo!</string>
+    <string name="somethingwentwrong">Midagi läks valesti</string>
+    <string name="retry">Proovi uuesti</string>
+    <string name="cities">Linnad</string>
+    <string name="settings">Seadistused</string>
+    <string name="loading">Laadimine</string>
+    <string name="now">Nüüd</string>
+    <string name="forecast">Homme</string>
+    <string name="more">Rohkem detaile</string>
+    <string name="weatherAtSea">Ilm merel</string>
+    <string name="weatherAtPeipsi">Ilm Peipsil</string>
+    <string name="winds">Tuuled</string>
+    <string name="placesAroundme">Kohad minu ümber</string>
+    <string name="General">Üldine</string>
+    <string name="Ok">Okei</string>
+    <string name="cancel">Tühista</string>
+    <string name="selected">Valitud:</string>
+    <string name="language">Keel</string>
+</resources>

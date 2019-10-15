@@ -1,0 +1,29 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Shift</string>
+    <string name="title_weather">Weather</string>
+    <string name="estonia">Estonia</string>
+    <string name="day">Day</string>
+    <string name="night">Night</string>
+    <string name="ohnoo">oh noo!</string>
+    <string name="somethingwentwrong">Something went wrong</string>
+    <string name="retry">Try Again</string>
+    <string name="cities">Cities</string>
+    <string name="settings">Settings</string>
+    <string name="loading">Loading</string>
+    <string name="now">Now</string>
+    <string name="forecast">Tomorrow</string>
+    <string name="more">More Details</string>
+    <string name="weatherAtSea">Weather at Sea</string>
+    <string name="weatherAtPeipsi">Weather at Peipsi</string>
+    <string name="winds">Winds</string>
+    <string name="placesAroundme">Places around me</string>
+
+    <string name="format_temperature" translatable="false"><xliff:g id="temp">%1.0f</xliff:g>\u00B0C</string>
+    <string name="format_winds" translatable="false"><xliff:g id="windSpeed">%.0f-%.0f m/s</xliff:g></string>
+
+    <string name="language">Language</string>
+    <string name="General">General</string>
+    <string name="selected">Selected:</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">Cancel</string>
+</resources>

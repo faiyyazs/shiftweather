@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/now"
+        layout="@layout/layout_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap5"
+        android:gravity="start|center_vertical"
+        android:text=""
+        android:textSize="14sp" />
+
+    <include
+        android:id="@+id/forecast"
+        layout="@layout/layout_tomorrow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap10" />
+
+
+
+    <LinearLayout
+        android:id="@+id/moredetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/weatherAtSeaAndPeipsi"
+            layout="@layout/layout_sea_peapsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/gap10" />
+
+
+    </LinearLayout>
+
+
+
+    <include
+        android:id="@+id/winds"
+        layout="@layout/layout_winds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap10" />
+
+
+</LinearLayout>

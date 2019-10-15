@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu="@menu/menu_home" />
+
+
+
+                <LinearLayout
+
+                    android:id="@+id/headerTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txtCountryName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:letterSpacing="0.5"
+                        android:text="@string/estonia"
+                        android:textColor="@color/colorAccent"
+                        android:textAllCaps="true"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:visibility="invisible"
+                            android:id="@+id/datesHolder"
+                            android:orientation="horizontal"
+                            android:layout_toStartOf="@+id/tabs"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_alignParentLeft="true"
+                                android:id="@+id/swipeLeft"
+                                app:srcCompat="@drawable/arrow_selector"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+                            
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:layout_toLeftOf="@id/swipeRight"
+                                android:layout_toRightOf="@id/swipeLeft"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/viewpagerDateSelector"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:id="@+id/swipeRight"
+                                app:srcCompat="@drawable/arrow_selector"
+                                android:rotation="180"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent" />
+
+
+                        </RelativeLayout>
+
+
+                       
+
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tabs"
+                            style="@style/tabTheme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            app:tabGravity="center"
+                            app:tabMode="fixed">
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/day" />
+
+                            <com.google.android.material.tabs.TabItem
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/night" />
+
+
+                        </com.google.android.material.tabs.TabLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragmentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>
