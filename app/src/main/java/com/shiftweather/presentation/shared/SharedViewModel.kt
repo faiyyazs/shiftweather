@@ -19,6 +19,11 @@ open class SharedViewModel(application: Application) : BaseViewModel(application
     val fragmentPresentationData: LiveData<Resource<FragmentPresentationModel>>
         get() = _fragmentPresentationData
 
+
+    internal val _fragmentReloadData = MutableLiveData<Boolean>()
+    val fragmentReloadData: LiveData<Boolean>
+        get() = _fragmentReloadData
+
 }
 
 data class FragmentPresentationModel(

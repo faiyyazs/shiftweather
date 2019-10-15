@@ -85,6 +85,13 @@ class WeatherForecastActivity :
             activityModel.getForecastData()
         }
 
+        sharedViewModel.fragmentReloadData.observe(this, Observer {
+           refresh->
+            if(refresh){
+                activityModel.getForecastData()
+            }
+        })
+
         getViewModel().tabChangeListener.observe(this, Observer {
             weatherTab->
             updateDataOnTabChange(weatherTab)

@@ -19,6 +19,7 @@ import com.shiftweather.presentation.today.adapter.ForecastAdapter
 import com.shiftweather.presentation.today.adapter.WindsAdapter
 import com.shiftweather.presentation.utils.getDegreesRepresentation
 import com.shiftweather.presentation.utils.icon
+import kotlinx.android.synthetic.main.layout_error.view.*
 import kotlinx.android.synthetic.main.layout_now.view.*
 import kotlinx.android.synthetic.main.layout_sea_peapsi.view.*
 import kotlinx.android.synthetic.main.layout_tomorrow.view.*
@@ -166,6 +167,7 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding,WeatherViewModel>(){
 
     private fun showError() {
         getViewDataBinding().error.visible()
+        getViewDataBinding().error.tryagain.setOnClickListener { sharedViewModel._fragmentReloadData.postValue(true) }
         getViewDataBinding().loading.gone()
         getViewDataBinding().weatherData.gone()
     }
