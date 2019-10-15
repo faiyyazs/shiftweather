@@ -20,9 +20,7 @@ It presents weather information for day & night with respected to the date selec
 
 ## Screenshots
 
-<img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125555.png" alt="drawing" width="200"/>
-<img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125657.png" alt="drawing" width="200"/>
-<img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125737.png" alt="drawing" width="200"/>
+<img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125555.png" alt="drawing" width="200"/><img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125657.png" alt="drawing" width="200"/><img src="https://raw.githubusercontent.com/faiyyazs/ShiftWeather/master/screenshots/device-2019-10-15-125737.png" alt="drawing" width="200"/>
 
 
 ## Data Flow
