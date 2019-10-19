@@ -3,7 +3,6 @@ package com.shiftweather.core.presentation
 import androidx.lifecycle.MutableLiveData
 
 
-
 /**
  * LiveData Extensions to load data with its corresponding status
  * */

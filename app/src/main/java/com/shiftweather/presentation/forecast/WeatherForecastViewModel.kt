@@ -14,11 +14,14 @@ import com.shiftweather.presentation.shared.FragmentPresentationModel
 import io.reactivex.schedulers.Schedulers
 
 
-class WeatherForecastViewModel(application: Application,private val forecastUseCase: ForecastUseCase) : BaseViewModel(application){
+class WeatherForecastViewModel(
+    application: Application,
+    private val forecastUseCase: ForecastUseCase
+) : BaseViewModel(application) {
 
 
     private val _weatherForecast = MutableLiveData<Resource<WeatherForecastPresentation>>()
-    val weatherForecast:  LiveData<Resource<WeatherForecastPresentation>>
+    val weatherForecast: LiveData<Resource<WeatherForecastPresentation>>
         get() = _weatherForecast
 
 
@@ -40,26 +43,28 @@ class WeatherForecastViewModel(application: Application,private val forecastUseC
         .doOnSubscribe { _weatherForecast.loading() }
         .subscribeOn(Schedulers.io())
         .map {
-                it.mapToPresentationData()
+            it.mapToPresentationData()
         }
         .subscribe({
             _weatherForecast.success(it)
-        },{
+        }, {
             _weatherForecast.error(it.message)
         })
     )
 
-    fun loadData( presentationData: WeatherForecastPresentation,
-                          tab: WeatherTab?): FragmentPresentationModel {
+    fun loadData(
+        presentationData: WeatherForecastPresentation,
+        tab: WeatherTab?
+    ): FragmentPresentationModel {
 
-     dateChangeListener.value?.let {
-         return FragmentPresentationModel(
-             now = loadNow(it.date,presentationData,tab),
-             tom = loadTom(it.date,presentationData,tab)
-         )
-     }?: run{
-         return FragmentPresentationModel(null,null)
-     }
+        dateChangeListener.value?.let {
+            return FragmentPresentationModel(
+                now = loadNow(it.date, presentationData, tab),
+                tom = loadTom(it.date, presentationData, tab)
+            )
+        } ?: run {
+            return FragmentPresentationModel(null, null)
+        }
     }
 
     private fun loadNow(
@@ -69,8 +74,8 @@ class WeatherForecastViewModel(application: Application,private val forecastUseC
     ): WeatherData? {
         var nowData: WeatherData? = null
 
-        when(tab){
-            WeatherTab.DAY-> nowData = presentationData.days.firstOrNull {
+        when (tab) {
+            WeatherTab.DAY -> nowData = presentationData.days.firstOrNull {
                 it.date == date
             }
 
@@ -86,14 +91,15 @@ class WeatherForecastViewModel(application: Application,private val forecastUseC
     private fun loadTom(
         date: String,
         presentationData: WeatherForecastPresentation,
-        tab: WeatherTab?): List<WeatherData>? {
+        tab: WeatherTab?
+    ): List<WeatherData>? {
         var tomData: List<WeatherData>? = null
-        when(tab) {
-            WeatherTab.DAY->  tomData = presentationData.days.filter {
+        when (tab) {
+            WeatherTab.DAY -> tomData = presentationData.days.filter {
                 it.date != date
             }
 
-            WeatherTab.NIGHT->  tomData = presentationData.nights.filter {
+            WeatherTab.NIGHT -> tomData = presentationData.nights.filter {
                 it.date != date
             }
         }

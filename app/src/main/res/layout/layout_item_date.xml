@@ -2,8 +2,8 @@
 <androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/date"
     android:layout_width="match_parent"
-    android:text="Wed, 12 Oct"
     android:layout_height="match_parent"
     android:gravity="center"
     android:letterSpacing="0.5"
+    android:text="Wed, 12 Oct"
     android:textSize="13sp" />

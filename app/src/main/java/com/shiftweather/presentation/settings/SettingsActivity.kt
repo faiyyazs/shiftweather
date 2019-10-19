@@ -11,9 +11,14 @@ import com.shiftweather.presentation.localization.SupportedLanguages
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
-class SettingsActivity: BaseActivity<ActivitySettingsBinding,SettingsViewModel>(), LocaleSelectorDialogFragment.OnItemSelectedListener{
+class SettingsActivity : BaseActivity<ActivitySettingsBinding, SettingsViewModel>(),
+    LocaleSelectorDialogFragment.OnItemSelectedListener {
 
-    override fun onLocaleItemSelected(fragment: LocaleSelectorDialogFragment, item: Locale, index: Int) {
+    override fun onLocaleItemSelected(
+        fragment: LocaleSelectorDialogFragment,
+        item: Locale,
+        index: Int
+    ) {
         changeLocale(item)
     }
 
@@ -21,7 +26,7 @@ class SettingsActivity: BaseActivity<ActivitySettingsBinding,SettingsViewModel>(
 
 
     override fun getLayoutId(): Int {
-       return R.layout.activity_settings
+        return R.layout.activity_settings
     }
 
     override fun getViewModel(): SettingsViewModel {
@@ -35,12 +40,13 @@ class SettingsActivity: BaseActivity<ActivitySettingsBinding,SettingsViewModel>(
         }
         getViewDataBinding().selectedLocale.text = Locale.getDefault().displayName
         getViewDataBinding().languageContainer.setOnClickListener {
-            LocaleSelectorDialogFragment.newInstance().show(supportFragmentManager,"LocaleSelectorDialogFragment")
+            LocaleSelectorDialogFragment.newInstance()
+                .show(supportFragmentManager, "LocaleSelectorDialogFragment")
         }
         SupportedLanguages.getList()
     }
 
-    companion object{
+    companion object {
 
         fun newIntent(context: Context): Intent {
             return Intent(context, SettingsActivity::class.java)

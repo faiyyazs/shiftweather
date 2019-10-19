@@ -8,7 +8,7 @@ object SupportedLanguages {
     private val Estonian: Locale by lazy { Locale("et", "ET") }
 
 
-    fun getList(): List<Locale>{
+    fun getList(): List<Locale> {
         return listOf(English, Estonian)
     }
 }

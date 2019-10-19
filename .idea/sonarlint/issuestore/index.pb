@@ -21,12 +21,8 @@ Z
 *ShiftWeather/ShiftWeather-ShiftWeather.iml,d/c/dcdcdf4d1bae1b3b18151e9d6fbf4010028c4607
 ]
 -app/src/main/java/com/shiftweather/Modules.kt,6/a/6aed7893cff809e979b06690a06c3717eb1ac62a
-_
-/app/src/test/java/com/shiftweather/data/test.kt,3/2/328de9b4e8314a15a1dce2e35dd83bb153645e8e
 ˆ
 Xapp/src/test/java/com/shiftweather/datasource/remote/ForecastRemoteDataSourceImplTest.kt,3/3/3326d63d06a205b54f858ed22279e7251e02586a
-`
-0app/src/test/java/com/shiftweather/domain/tes.kt,f/1/f110ce593ddebe131c03356bcebd99e8ad0cc87e
 `
 0app/src/test/java/com/shiftweather/TestModels.kt,1/b/1b5eee0b398cfd8e066cc845d2233ddbaff025e7
 y
@@ -49,8 +45,6 @@ Lapp/src/main/java/com/shiftweather/datasource/remote/forecast/ForecastApi.kt,f
 Papp/src/main/java/com/shiftweather/datasource/remote/forecast/ForecastRequest.kt,0/8/08c73c2eb395e4fc49af792e6e32661e711ebcfc
 f
 6app/src/main/java/com/shiftweather/ShiftApplication.kt,8/c/8c4731add5424a16fc8ec56d73d50163c3577a62
-w
-Gapp/src/main/java/com/shiftweather/core/presentation/SingleLiveEvent.kt,a/9/a9daeb69bcb083d9a20dba13adc03e7e2e9a7862
 v
 Fapp/src/main/java/com/shiftweather/core/presentation/ViewExtensions.kt,1/7/17f9bfd0e9604ee1c0475f39f906c854914f741e
 X
@@ -168,3 +162,9 @@ F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 ‚
 Rapp/src/main/java/com/shiftweather/presentation/localization/SupportedLanguages.kt,b/7/b700ead761eb551cb671d6c1d0e62eda16209a2c
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+C
+buildSrc/.gitignore,2/2/22163f12ca562d4b53ce3f8d6a0cbd595fd4d0a1
+r
+Bapp/src/main/java/com/shiftweather/core/network/RetrofitManager.kt,c/c/cc371c0692e1f4fdbfdce19ed4be4c3f939e2a80

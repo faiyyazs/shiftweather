@@ -11,11 +11,11 @@ data class BaseWeather(
     val phenomenon: PhenomenonType,
     val tempmin: Double?,
     val tempmax: Double?
-): Parcelable
+) : Parcelable
 
 
-fun Weather.mapToPresentation(date : String)= BaseWeather(
-    date =  date,
+fun Weather.mapToPresentation(date: String) = BaseWeather(
+    date = date,
     phenomenon = phenomenon,
     tempmax = tempmax,
     tempmin = tempmin

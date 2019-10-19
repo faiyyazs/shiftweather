@@ -7,8 +7,6 @@ import com.shiftweather.domain.model.Forecasts
 import io.reactivex.Single
 
 
-
-
 /**
  *
  * Forecast remote data source implementation.
@@ -22,7 +20,7 @@ class ForecastRemoteDataSourceImpl constructor(
      * Fetches latest forecast information from remote.
      * */
     override fun get(): Single<Forecasts> {
-       return request.getForecastData().map { it.mapToDomain() }
+        return request.getForecastData().map { it.mapToDomain() }
     }
 
 

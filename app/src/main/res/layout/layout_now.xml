@@ -8,10 +8,10 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/now"
-        android:visibility="gone"
         android:letterSpacing="@dimen/subtitleltrSpace"
-        android:textSize="15sp"/>
+        android:text="@string/now"
+        android:textSize="15sp"
+        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"

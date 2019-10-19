@@ -24,9 +24,9 @@ class LocaleActivityImpl : ILocaleActivity {
     }
 
     override fun onResumed(activity: Activity) {
-     if (locale == Locale.getDefault()) {
-          return
-     }
-     activity.recreate()
+        if (locale == Locale.getDefault()) {
+            return
+        }
+        activity.recreate()
     }
 }

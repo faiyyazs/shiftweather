@@ -24,6 +24,11 @@ import org.koin.dsl.module
 
 fun injectFeature() = loadFeature
 
+/**
+ * Top-level lazy property used to load koin modules.
+ * Code inside the lazy block is executed only once, no matter how many times the property is accessed.
+ * Can be used later through activity & fragment in dynamic feature approach for the feature & its respective modules.
+ * */
 private val loadFeature by lazy {
 
     loadKoinModules(
@@ -41,7 +46,7 @@ private val loadFeature by lazy {
 
 private val viewModelModule: Module = module {
     viewModel { SplashViewModel(application = get()) }
-    viewModel { WeatherForecastViewModel(application = get(),forecastUseCase = get()) }
+    viewModel { WeatherForecastViewModel(application = get(), forecastUseCase = get()) }
     viewModel { SharedViewModel(application = get()) }
     viewModel { CityViewModel(application = get()) }
     viewModel { WeatherViewModel(application = get()) }
@@ -66,7 +71,7 @@ private val networkModule: Module = module {
 }
 
 private val supportModule: Module = module {
-    factory { LocaleActivityImpl()}
+    factory { LocaleActivityImpl() }
 }
 
 private val adaptersModule: Module = module {

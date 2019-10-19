@@ -10,7 +10,7 @@ import com.shiftweather.presentation.forecast.WeatherForecastActivity
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-class SplashActivity : BaseActivity<ActivitySplashBinding,SplashViewModel>() {
+class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
 
 
     private val splashViewModel: SplashViewModel by viewModel()
@@ -26,13 +26,13 @@ class SplashActivity : BaseActivity<ActivitySplashBinding,SplashViewModel>() {
 
     override fun setUp(savedInstanceState: Bundle?) {
 
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             splashViewModel.startMainActivity()
         }
 
         splashViewModel.navigationObservable.observe(this, Observer {
-            if(it){
-                val intent =  Intent(this@SplashActivity, WeatherForecastActivity::class.java)
+            if (it) {
+                val intent = Intent(this@SplashActivity, WeatherForecastActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }

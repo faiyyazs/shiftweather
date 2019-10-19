@@ -29,7 +29,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class WeatherFragment : BaseFragment<FragmentWeatherBinding,WeatherViewModel>(){
+class WeatherFragment : BaseFragment<FragmentWeatherBinding, WeatherViewModel>() {
 
 
     private val fragmentViewModel: WeatherViewModel by viewModel()
@@ -50,42 +50,42 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding,WeatherViewModel>(){
 
 
         sharedViewModel.fragmentPresentationData.value?.let {
-             refreshContent(it,view)
-        }?: run {
-          showError()
+            refreshContent(it, view)
+        } ?: run {
+            showError()
         }
 
         sharedViewModel.fragmentPresentationData.observe(this, Observer {
-            refreshContent(it,view)
+            refreshContent(it, view)
         })
 
 
     }
 
-    private fun refreshContent(it: Resource<FragmentPresentationModel>,view: View) {
-        when(it.state){
+    private fun refreshContent(it: Resource<FragmentPresentationModel>, view: View) {
+        when (it.state) {
 
             ResourceState.LOADING -> showloadingState()
             ResourceState.ERROR -> showError()
             ResourceState.SUCCESS -> showData()
 
         }
-        it.data?.let{
-            loadContent(view,it)
+        it.data?.let {
+            loadContent(view, it)
         }
-        it.message?.let{
+        it.message?.let {
         }
 
     }
 
-    private fun loadContent(view: View,fragmentPresentationModel: FragmentPresentationModel){
+    private fun loadContent(view: View, fragmentPresentationModel: FragmentPresentationModel) {
 
         fragmentPresentationModel.let {
 
-            fragmentPresentationModel.now?.let {
-                    nowData->
+            fragmentPresentationModel.now?.let { nowData ->
 
-                getViewDataBinding().weatherData.now.phenomenon.text = nowData.weather.phenomenon.phenomenon
+                getViewDataBinding().weatherData.now.phenomenon.text =
+                    nowData.weather.phenomenon.phenomenon
                 getViewDataBinding().weatherData.now.tempMin.text = nowData.weather.tempmin?.let {
                     getDegreesRepresentation(
                         view.context,
@@ -103,54 +103,58 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding,WeatherViewModel>(){
                 getViewDataBinding().weatherData.description.text = nowData.text
 
                 nowData.sea?.let {
-                    if(it.isEmpty()){
+                    if (it.isEmpty()) {
                         getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.seaContainer.gone()
-                    }else{
+                    } else {
                         getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.seaContainer.visible()
                     }
 
-                    getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.seaLevel.text = nowData.sea
-                }?: run {
+                    getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.seaLevel.text =
+                        nowData.sea
+                } ?: run {
                     getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.seaContainer.gone()
                 }
 
                 nowData.peipsi?.let {
-                    if(it.isEmpty()){
+                    if (it.isEmpty()) {
                         getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiContainer.gone()
-                    }else{
+                    } else {
                         getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiContainer.visible()
                     }
-                    getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiLevel.text = nowData.peipsi
+                    getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiLevel.text =
+                        nowData.peipsi
 
-                }?: run { getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiContainer.gone() }
+                }
+                    ?: run { getViewDataBinding().weatherData.moredetails.weatherAtSeaAndPeipsi.peipsiContainer.gone() }
 
 
                 getViewDataBinding().weatherData.winds.recyclerViewWinds.adapter = windsadapter
                 val spanningLinearLayoutManager = SpreadEvenLinearLayoutManager(view.context)
                 spanningLinearLayoutManager.orientation = RecyclerView.HORIZONTAL
-                getViewDataBinding().weatherData.winds.recyclerViewWinds.layoutManager = spanningLinearLayoutManager
+                getViewDataBinding().weatherData.winds.recyclerViewWinds.layoutManager =
+                    spanningLinearLayoutManager
 
                 nowData.wind?.let {
-                    if(it.isEmpty()){
+                    if (it.isEmpty()) {
                         getViewDataBinding().weatherData.winds.gone()
-                    }else{
+                    } else {
                         getViewDataBinding().weatherData.winds.visible()
                     }
                     windsadapter.submitList(it)
-                }?: run {
+                } ?: run {
                     getViewDataBinding().weatherData.winds.gone()
                 }
 
-                fragmentPresentationModel.tom?.let {
-                        tomData->
+                fragmentPresentationModel.tom?.let { tomData ->
                     getViewDataBinding().weatherData.recyclerViewTom.adapter = adapter
                     val spanningLinearLayoutManager = SpreadEvenLinearLayoutManager(view.context)
                     spanningLinearLayoutManager.orientation = RecyclerView.HORIZONTAL
-                    getViewDataBinding().weatherData.recyclerViewTom.layoutManager = spanningLinearLayoutManager
+                    getViewDataBinding().weatherData.recyclerViewTom.layoutManager =
+                        spanningLinearLayoutManager
                     adapter.submitList(tomData)
                 }
 
-            }?:run {
+            } ?: run {
                 showError()
             }
 
@@ -167,7 +171,11 @@ class WeatherFragment : BaseFragment<FragmentWeatherBinding,WeatherViewModel>(){
 
     private fun showError() {
         getViewDataBinding().error.visible()
-        getViewDataBinding().error.tryagain.setOnClickListener { sharedViewModel._fragmentReloadData.postValue(true) }
+        getViewDataBinding().error.tryagain.setOnClickListener {
+            sharedViewModel.fragmentReloadData.postValue(
+                true
+            )
+        }
         getViewDataBinding().loading.gone()
         getViewDataBinding().weatherData.gone()
     }

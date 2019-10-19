@@ -23,8 +23,8 @@ class ForecastUseCaseTest {
     private val forecastList = forecasts.copy(forecasts = remoteItem)
 
     @Before
-    fun setup(){
-        forecastUseCase =  ForecastUseCase(mockForecastRepository)
+    fun setup() {
+        forecastUseCase = ForecastUseCase(mockForecastRepository)
     }
 
     @Test
@@ -45,7 +45,6 @@ class ForecastUseCaseTest {
         test.assertValueCount(1)
 
     }
-
 
 
     @Test

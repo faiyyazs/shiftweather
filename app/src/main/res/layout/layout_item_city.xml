@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:backgroundTint="@color/primaryColor"
-    app:cardElevation="1dp"
-    android:layout_marginLeft="@dimen/gap10"
-    android:layout_marginRight="@dimen/gap10"
-    android:layout_marginTop="@dimen/gap5"
-    android:layout_marginBottom="@dimen/gap5"
-    app:cardCornerRadius="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/CardViewTheme"
-    android:minHeight="120dp"
-    app:cardPreventCornerOverlap="true"
-
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:layout_marginLeft="@dimen/gap10"
+    android:layout_marginTop="@dimen/gap5"
+    android:layout_marginRight="@dimen/gap10"
+    android:layout_marginBottom="@dimen/gap5"
+    android:backgroundTint="@color/primaryColor"
+    android:minHeight="120dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp"
 
+    app:cardPreventCornerOverlap="true">
 
 
     <LinearLayout
@@ -26,16 +25,16 @@
 
         <LinearLayout
 
-            android:orientation="vertical"
-            android:layout_weight="1.5"
             android:layout_width="0dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/cityName"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:letterSpacing="0.25"
                 android:text="Harku"
@@ -44,12 +43,11 @@
                 android:textStyle="normal" />
 
 
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/degreeUnit"
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:letterSpacing="0.15"
                 android:text="°C"
@@ -60,34 +58,30 @@
         </LinearLayout>
 
 
-
         <LinearLayout
 
-            android:layout_weight="1"
             android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
 
             <LinearLayout
 
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="horizontal">
 
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/dayWeatherType"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="60dp"
+                    android:layout_weight="1"
 
 
                     app:srcCompat="@drawable/weathercons_rain" />
-
-
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -103,28 +97,24 @@
                     android:textStyle="bold" />
 
 
-
             </LinearLayout>
 
 
-
             <LinearLayout
-                android:background="@color/secondaryDarkColor"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="@color/secondaryDarkColor"
+                android:orientation="horizontal">
 
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/nightWeatherType"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="60dp"
-                    app:tint="@color/primaryColor"
-                    app:srcCompat="@drawable/weathercons_rain" />
-
-
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/weathercons_rain"
+                    app:tint="@color/primaryColor" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -140,12 +130,7 @@
                     android:textStyle="bold" />
 
 
-
-
-
             </LinearLayout>
-
-
 
 
         </LinearLayout>

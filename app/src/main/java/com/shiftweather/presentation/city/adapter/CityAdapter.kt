@@ -6,9 +6,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.shiftweather.R
 import com.shiftweather.core.presentation.inflate
-
-import com.shiftweather.presentation.utils.icon
 import com.shiftweather.presentation.model.City
+import com.shiftweather.presentation.utils.icon
 import kotlinx.android.synthetic.main.layout_item_city.view.*
 
 
@@ -28,26 +27,24 @@ class CityAdapter constructor(private val itemClick: (City) -> Unit) :
 
         fun bind(item: City) {
 
-                itemView.cityName.text = item.name
+            itemView.cityName.text = item.name
 
-                item.day?.let {
-                    day->
-                    day.phenomenon.let {
-                        itemView.dayWeatherType.setImageResource(it.icon())
-                        itemView.tempMax.text = day.tempmax?.toInt().toString()
-                    }
+            item.day?.let { day ->
+                day.phenomenon.let {
+                    itemView.dayWeatherType.setImageResource(it.icon())
+                    itemView.tempMax.text = day.tempmax?.toInt().toString()
                 }
-
-
-                item.night?.let {
-                        night->
-                    night.phenomenon.let {
-                        itemView.nightWeatherType.setImageResource(it.icon())
-                        itemView.tempMin.text = night.tempmin?.toInt().toString()
-                    }
-                }
-
             }
+
+
+            item.night?.let { night ->
+                night.phenomenon.let {
+                    itemView.nightWeatherType.setImageResource(it.icon())
+                    itemView.tempMin.text = night.tempmin?.toInt().toString()
+                }
+            }
+
+        }
     }
 }
 

@@ -29,7 +29,6 @@
                     app:menu="@menu/menu_home" />
 
 
-
                 <LinearLayout
 
                     android:id="@+id/headerTitle"
@@ -44,8 +43,8 @@
                         android:gravity="center"
                         android:letterSpacing="0.5"
                         android:text="@string/estonia"
-                        android:textColor="@color/colorAccent"
                         android:textAllCaps="true"
+                        android:textColor="@color/colorAccent"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -55,45 +54,42 @@
                         android:layout_height="wrap_content">
 
                         <RelativeLayout
-                            android:visibility="invisible"
                             android:id="@+id/datesHolder"
-                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
                             android:layout_toStartOf="@+id/tabs"
                             android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="?attr/actionBarSize">
+                            android:orientation="horizontal"
+                            android:visibility="invisible">
 
                             <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_alignParentLeft="true"
                                 android:id="@+id/swipeLeft"
-                                app:srcCompat="@drawable/arrow_selector"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent" />
-                            
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                app:srcCompat="@drawable/arrow_selector" />
+
 
                             <androidx.viewpager.widget.ViewPager
-                                android:layout_toLeftOf="@id/swipeRight"
-                                android:layout_toRightOf="@id/swipeLeft"
-                                android:layout_centerVertical="true"
                                 android:id="@+id/viewpagerDateSelector"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent" />
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@id/swipeRight"
+                                android:layout_toRightOf="@id/swipeLeft" />
 
 
                             <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/swipeRight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_alignParentRight="true"
                                 android:layout_marginRight="5dp"
-                                android:id="@+id/swipeRight"
-                                app:srcCompat="@drawable/arrow_selector"
                                 android:rotation="180"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent" />
+                                app:srcCompat="@drawable/arrow_selector" />
 
 
                         </RelativeLayout>
-
-
-                       
 
 
                         <com.google.android.material.tabs.TabLayout
@@ -130,7 +126,6 @@
                     android:layout_height="match_parent">
 
                 </RelativeLayout>
-
 
 
             </LinearLayout>

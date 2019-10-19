@@ -2,10 +2,8 @@ package com.shiftweather.data.repository
 
 import com.shiftweather.data.datasource.IForecastRemoteDataSource
 import com.shiftweather.domain.model.Forecast
-import com.shiftweather.domain.model.Forecasts
 import com.shiftweather.domain.repository.IForecastRepository
 import io.reactivex.Single
-
 
 
 /**
@@ -16,7 +14,6 @@ import io.reactivex.Single
 class ForecastRepositoryImpl constructor(
     private val remoteDataSource: IForecastRemoteDataSource
 ) : IForecastRepository {
-
 
 
     /**

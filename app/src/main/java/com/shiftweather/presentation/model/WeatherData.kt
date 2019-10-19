@@ -27,7 +27,7 @@ fun Forecast.mapToDaysWeatherData(): WeatherData = WeatherData(
 
 fun Forecast.mapToNightsWeatherData(): WeatherData = WeatherData(
     date,
-    BaseWeather(date,night.weather.phenomenon,night.weather.tempmin,night.weather.tempmax),
+    BaseWeather(date, night.weather.phenomenon, night.weather.tempmin, night.weather.tempmax),
     night.text,
     night.sea,
     night.peipsi,

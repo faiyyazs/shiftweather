@@ -15,12 +15,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 
-class CityForecastActivity : BaseActivity<ActivityCityweatherBinding,CityViewModel>(){
+class CityForecastActivity : BaseActivity<ActivityCityweatherBinding, CityViewModel>() {
 
 
     private val activityModel: CityViewModel by viewModel()
     private val cityItemClick: (City) -> Unit =
-        {  }
+        { }
     private val adapter = CityAdapter(cityItemClick)
 
 
@@ -45,18 +45,18 @@ class CityForecastActivity : BaseActivity<ActivityCityweatherBinding,CityViewMod
             val cityDataList = it.getParcelableArrayListExtra<City>("key")
             cityDataList?.let {
                 adapter.submitList(it)
-            }?: run{
+            } ?: run {
 
             }
         }
 
     }
 
-    companion object{
+    companion object {
 
-        fun newIntent(context: Context,cities: List<City>): Intent {
+        fun newIntent(context: Context, cities: List<City>): Intent {
             val intent = Intent(context, CityForecastActivity::class.java)
-            intent.putParcelableArrayListExtra("key",cities as ArrayList<out Parcelable>)
+            intent.putParcelableArrayListExtra("key", cities as ArrayList<out Parcelable>)
             return intent
         }
     }

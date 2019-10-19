@@ -26,16 +26,15 @@
 
         </include>
 
-       <include
-           layout="@layout/layout_weatherdata"
-           android:id="@+id/weatherData"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_centerInParent="true"
-           android:visibility="gone">
+        <include
+            android:id="@+id/weatherData"
+            layout="@layout/layout_weatherdata"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
 
-       </include>
-
+        </include>
 
 
     </RelativeLayout>

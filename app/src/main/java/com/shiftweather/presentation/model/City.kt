@@ -12,7 +12,7 @@ data class City(
     val day: BaseWeather?,
     val night: BaseWeather?
 
-): Parcelable
+) : Parcelable
 
 
 fun Forecast.mapToCities(): List<City>? = night.cities?.let {

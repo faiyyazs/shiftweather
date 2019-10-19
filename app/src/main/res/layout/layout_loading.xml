@@ -7,34 +7,34 @@
 
 
     <LinearLayout
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:tint="@color/colorAccent"
-        app:srcCompat="@drawable/ic_cloud_down" />
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
-    <LinearLayout
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/appLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="@color/colorAccent"
+            app:srcCompat="@drawable/ic_cloud_down" />
 
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <LinearLayout
 
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/loading" />
+            android:orientation="vertical">
 
 
-    </LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/loading" />
+
+
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

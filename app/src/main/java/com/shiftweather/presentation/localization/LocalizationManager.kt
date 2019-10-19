@@ -12,9 +12,11 @@ object LocalizationManager {
     private const val COUNTRY = "country"
 
 
-
     private fun getPreferences(context: Context): SharedPreferences {
-        return context.getSharedPreferences(LocalizationManager::class.java.name, Context.MODE_PRIVATE)
+        return context.getSharedPreferences(
+            LocalizationManager::class.java.name,
+            Context.MODE_PRIVATE
+        )
     }
 
     fun onAttach(context: Context): Context {

@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.forecast.WeatherForecastActivity"/>
+        <activity android:name=".presentation.forecast.WeatherForecastActivity" />
         <activity android:name=".presentation.city.CityForecastActivity" />
         <activity android:name=".presentation.settings.SettingsActivity" />
 

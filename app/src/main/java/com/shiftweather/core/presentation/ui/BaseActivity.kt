@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.shiftweather.injectFeature
 import com.shiftweather.presentation.localization.ILocaleActivity
 import com.shiftweather.presentation.localization.LocaleActivityImpl
 import org.koin.android.ext.android.inject
@@ -19,11 +18,10 @@ import java.util.*
  * Generic Base Activity used to inflat with its respective view data binding, activity model.
  *
  * */
-abstract class BaseActivity<T: ViewDataBinding, V: BaseViewModel> : AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding, V : BaseViewModel> : AppCompatActivity() {
 
     private lateinit var mViewDataBinding: T
     private val localeActivity: ILocaleActivity by inject<LocaleActivityImpl>()
-
 
 
     @LayoutRes
@@ -35,7 +33,7 @@ abstract class BaseActivity<T: ViewDataBinding, V: BaseViewModel> : AppCompatAct
 
 
     override fun attachBaseContext(newBase: Context) {
-        injectFeature()
+        //injectFeature() // Commented until lazy loading koin-modules in dynamic module migration.
         super.attachBaseContext(localeActivity.attachBaseContext(newBase))
     }
 
@@ -49,7 +47,7 @@ abstract class BaseActivity<T: ViewDataBinding, V: BaseViewModel> : AppCompatAct
         mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId())
     }
 
-    fun getViewDataBinding() : T {
+    fun getViewDataBinding(): T {
         return mViewDataBinding
     }
 
@@ -72,7 +70,7 @@ abstract class BaseActivity<T: ViewDataBinding, V: BaseViewModel> : AppCompatAct
 
     override fun onResume() {
         super.onResume()
-       localeActivity.onResumed(this)
+        localeActivity.onResumed(this)
     }
 
     override fun onPause() {

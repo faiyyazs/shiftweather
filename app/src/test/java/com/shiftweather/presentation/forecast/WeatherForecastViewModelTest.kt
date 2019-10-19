@@ -39,7 +39,7 @@ class WeatherForecastViewModelTest {
 
     @Before
     fun setUp() {
-        viewModel = WeatherForecastViewModel(application,mockUseCase)
+        viewModel = WeatherForecastViewModel(application, mockUseCase)
     }
 
     @Test

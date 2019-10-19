@@ -4,56 +4,56 @@
 
 
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:layout_alignParentTop="true"
-            app:navigationIcon="@drawable/ic_arrow_back"
             android:id="@+id/toolbar"
-            app:title="@string/settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:elevation="2dp"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
-            android:elevation="2dp" />
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:title="@string/settings" />
 
 
         <LinearLayout
-            android:padding="@dimen/gap20"
-            android:orientation="vertical"
-            android:layout_marginTop="5dp"
-            android:layout_below="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:padding="@dimen/gap20">
 
             <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/General"
-                app:textAllCaps="true"
                 android:letterSpacing="@dimen/subtitleltrSpace"
+                android:text="@string/General"
                 android:textColor="@color/colorAccent"
-                style="@style/TextAppearance.AppCompat.Title"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:textAllCaps="true" />
 
             <LinearLayout
                 android:id="@+id/languageContainer"
-                android:padding="@dimen/gap5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/gap20"
                 android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:padding="@dimen/gap5">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/language"
                     android:letterSpacing="@dimen/subtitleltrSpace"
+                    android:text="@string/language"
                     android:textColor="@color/secondaryColor"
                     android:textSize="15sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
 
@@ -63,17 +63,10 @@
                     android:letterSpacing="@dimen/subtitleltrSpace"
                     android:textColor="@color/secondaryColor"
                     android:textSize="15sp"
-                    android:textStyle="normal"/>
-
+                    android:textStyle="normal" />
 
 
             </LinearLayout>
-
-
-
-
-
-
 
 
         </LinearLayout>

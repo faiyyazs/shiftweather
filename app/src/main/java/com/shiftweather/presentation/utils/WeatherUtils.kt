@@ -17,14 +17,14 @@ fun PhenomenonType.icon(): Int {
         PhenomenonType.CLEAR -> R.drawable.weathercons_clear
         PhenomenonType.FEWCLOUDS, PhenomenonType.VARIABLECLOUDS -> R.drawable.weathercons_partly_cloudy
         PhenomenonType.CLOUDY -> R.drawable.weathercons_cloudy
-        PhenomenonType.CLOUDYWITHCLEARSPELLS-> R.drawable.weathercons_partly_cloudy
-        PhenomenonType.LIGHTSHOWER,PhenomenonType.LIGHTRAIN, PhenomenonType.MODERATERAIN, PhenomenonType.HEAVYRAIN -> R.drawable.weathercons_rain
+        PhenomenonType.CLOUDYWITHCLEARSPELLS -> R.drawable.weathercons_partly_cloudy
+        PhenomenonType.LIGHTSHOWER, PhenomenonType.LIGHTRAIN, PhenomenonType.MODERATERAIN, PhenomenonType.HEAVYRAIN -> R.drawable.weathercons_rain
         PhenomenonType.LIGHTSNOWFALL, PhenomenonType.MODERATESNOWFALL, PhenomenonType.HEAVYSNOWFALL -> R.drawable.weathercons_snowfall
         PhenomenonType.RISKOFGLAZE -> R.drawable.weathercons_snow
         PhenomenonType.SNOWSTORM, PhenomenonType.DRIFTINGSNOW -> R.drawable.weathercons_snowfall
-        PhenomenonType.LIGHTSNOWSHOWER, PhenomenonType.MODERATESNOWSHOWER, PhenomenonType.HEAVYSNOWSHOWER,PhenomenonType.HEAVYSHOWER,PhenomenonType.MODERATESHOWER,PhenomenonType.LIGHTSLEET,PhenomenonType.MODERATESLEET -> R.drawable.weathercons_shower
-        PhenomenonType.HAIL->R.drawable.weathercons_hail
-        PhenomenonType.MIST-> R.drawable.weathercons_mist
+        PhenomenonType.LIGHTSNOWSHOWER, PhenomenonType.MODERATESNOWSHOWER, PhenomenonType.HEAVYSNOWSHOWER, PhenomenonType.HEAVYSHOWER, PhenomenonType.MODERATESHOWER, PhenomenonType.LIGHTSLEET, PhenomenonType.MODERATESLEET -> R.drawable.weathercons_shower
+        PhenomenonType.HAIL -> R.drawable.weathercons_hail
+        PhenomenonType.MIST -> R.drawable.weathercons_mist
         PhenomenonType.FOG -> R.drawable.weathercons_fog
         PhenomenonType.THUNDER -> R.drawable.weathercons_thunder
         PhenomenonType.THUNDERSTORM -> R.drawable.weathercons_thunderstorm
@@ -40,7 +40,7 @@ fun PhenomenonType.icon(): Int {
  * */
 fun WindDirection.icon(): Int {
 
-    return when(this) {
+    return when (this) {
         WindDirection.SOUTH -> 270
         WindDirection.SOUTHWEST -> 315
         WindDirection.WEST -> 0
@@ -62,15 +62,15 @@ fun getForecastDateformat(date: String): String {
     return titleForecastDateformat.format(responseDateFormat.parse(date))
 }
 
-fun getTitleDateFormat(date: String): String{
+fun getTitleDateFormat(date: String): String {
     return titleDateFormat.format(responseDateFormat.parse(date))
 }
 
-fun getWindsRepresentation(context: Context, speedMin: Double,speedMax: Double): String {
-    return String.format(context.getString(R.string.format_winds), speedMin,speedMax)
+fun getWindsRepresentation(context: Context, speedMin: Double, speedMax: Double): String {
+    return String.format(context.getString(R.string.format_winds), speedMin, speedMax)
 }
 
-fun getDegreesRepresentation(context: Context,  temperature: Double) :String{
+fun getDegreesRepresentation(context: Context, temperature: Double): String {
     return String.format(context.getString(R.string.format_temperature), temperature)
 }
 

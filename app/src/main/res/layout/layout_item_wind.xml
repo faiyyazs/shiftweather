@@ -35,25 +35,19 @@
             app:srcCompat="@drawable/ic_compass_w" />
 
 
-
-
-
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:letterSpacing="0.05"
             android:text="Kuusiku"
-            android:gravity="center"
             android:textColor="@color/secondaryLightColor"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/txtMin"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/weatherType"
             app:layout_constraintTop_toBottomOf="@+id/weatherType" />
-
-
-
 
 
     </LinearLayout>

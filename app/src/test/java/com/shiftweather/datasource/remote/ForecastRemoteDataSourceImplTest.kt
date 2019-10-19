@@ -3,15 +3,15 @@ package com.shiftweather.datasource.remote
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import com.shiftweather.forecastEntity
-import com.shiftweather.datasource.remote.forecast.ForecastRequest
 import com.shiftweather.datasource.entity.mapToDomain
+import com.shiftweather.datasource.remote.forecast.ForecastRequest
+import com.shiftweather.forecastEntity
 import com.shiftweather.forecastsEntity
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Test
 
-class ForecastRemoteDataSourceImplTest{
+class ForecastRemoteDataSourceImplTest {
 
     private lateinit var dataSource: ForecastRemoteDataSourceImpl
 

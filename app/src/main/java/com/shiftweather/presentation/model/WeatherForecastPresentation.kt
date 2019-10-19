@@ -11,25 +11,23 @@ data class WeatherForecastPresentation(
 )
 
 
-fun List<Forecast>.mapToPresentationData(): WeatherForecastPresentation =  WeatherForecastPresentation(
+fun List<Forecast>.mapToPresentationData(): WeatherForecastPresentation =
+    WeatherForecastPresentation(
 
-        dates = map {
-            forecast -> forecast.mapToWeatherDate()
+        dates = map { forecast ->
+            forecast.mapToWeatherDate()
         },
 
-        days = map {
-                forecast ->
+        days = map { forecast ->
             forecast.mapToDaysWeatherData()
         },
-        nights = map {
-                forecast ->
+        nights = map { forecast ->
             forecast.mapToNightsWeatherData()
         },
-        cities = map {
-                forecast ->
+        cities = map { forecast ->
             forecast.mapToPlacesAroundme()
         }
-)
+    )
 
 
 

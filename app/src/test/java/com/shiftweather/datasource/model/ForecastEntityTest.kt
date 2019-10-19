@@ -9,7 +9,7 @@ class ForecastEntityTest {
 
 
     @Test
-    fun `map entity to domain`(){
+    fun `map entity to domain`() {
         // given
 
         // when

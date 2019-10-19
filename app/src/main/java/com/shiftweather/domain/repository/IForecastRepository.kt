@@ -4,7 +4,6 @@ import com.shiftweather.domain.model.Forecast
 import io.reactivex.Single
 
 
-
 /**
  *
  * Forecast repository contract consumed by domain layer unaware of the its implementation

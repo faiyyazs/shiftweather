@@ -5,13 +5,13 @@
     android:viewportHeight="477.175">
 
     <group
-        android:scaleX="0.70"
-        android:scaleY="0.70"
         android:pivotX="238.58"
-        android:pivotY="238.58">
-    <path
-        android:fillColor="#FF000000"
-        android:pathData="M145.188,238.575l215.5,-215.5c5.3,-5.3 5.3,-13.8 0,-19.1s-13.8,-5.3 -19.1,0l-225.1,225.1c-5.3,5.3 -5.3,13.8 0,19.1l225.1,225c2.6,2.6 6.1,4 9.5,4s6.9,-1.3 9.5,-4c5.3,-5.3 5.3,-13.8 0,-19.1L145.188,238.575z" />
+        android:pivotY="238.58"
+        android:scaleX="0.70"
+        android:scaleY="0.70">
+        <path
+            android:fillColor="#FF000000"
+            android:pathData="M145.188,238.575l215.5,-215.5c5.3,-5.3 5.3,-13.8 0,-19.1s-13.8,-5.3 -19.1,0l-225.1,225.1c-5.3,5.3 -5.3,13.8 0,19.1l225.1,225c2.6,2.6 6.1,4 9.5,4s6.9,-1.3 9.5,-4c5.3,-5.3 5.3,-13.8 0,-19.1L145.188,238.575z" />
 
     </group>
 

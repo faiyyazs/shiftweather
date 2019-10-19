@@ -10,7 +10,7 @@ data class CityData(
     val date: String,
     val cities: List<City>?
 
-): Parcelable
+) : Parcelable
 
 
 fun Forecast.mapToPlacesAroundme(): CityData = CityData(

@@ -7,12 +7,12 @@ data class Weather(
     val tempmax: Double?
 )
 
-enum class PhenomenonType(val phenomenon : String){
+enum class PhenomenonType(val phenomenon: String) {
 
 
     CLEAR("Clear"),
 
-    FEWCLOUDS( "Few clouds"),
+    FEWCLOUDS("Few clouds"),
     CLOUDY("Cloudy"),
     VARIABLECLOUDS("Variable clouds"),
 
@@ -39,16 +39,12 @@ enum class PhenomenonType(val phenomenon : String){
     MODERATESLEET("Moderate sleet"),
 
 
-
     LIGHTSNOWFALL("Light snowfall"),
     MODERATESNOWFALL("Moderate snowfall"),
     HEAVYSNOWFALL("Heavy snowfall"),
 
     SNOWSTORM("Snowstorm"),
     DRIFTINGSNOW("Drifting snow"),
-
-
-
 
 
     HAIL("Hail"),

@@ -2,6 +2,7 @@ package com.shiftweather.datasource.entity
 
 import com.shiftweather.domain.model.Forecast
 import com.squareup.moshi.Json
+
 /**
  *
  * Network response entity

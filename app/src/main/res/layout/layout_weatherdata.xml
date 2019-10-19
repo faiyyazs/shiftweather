@@ -12,8 +12,6 @@
         android:layout_height="wrap_content" />
 
 
-
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/description"
         android:layout_width="match_parent"
@@ -31,7 +29,6 @@
         android:layout_marginTop="@dimen/gap10" />
 
 
-
     <LinearLayout
         android:id="@+id/moredetails"
         android:layout_width="match_parent"
@@ -47,7 +44,6 @@
 
 
     </LinearLayout>
-
 
 
     <include

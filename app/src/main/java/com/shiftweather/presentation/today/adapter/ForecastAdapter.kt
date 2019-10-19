@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.shiftweather.R
 import com.shiftweather.core.presentation.inflate
+import com.shiftweather.presentation.model.WeatherData
 import com.shiftweather.presentation.utils.getDegreesRepresentation
 import com.shiftweather.presentation.utils.getForecastDateformat
 import com.shiftweather.presentation.utils.icon
-import com.shiftweather.presentation.model.WeatherData
 import kotlinx.android.synthetic.main.layout_item_forecast.view.*
 
 
@@ -30,13 +30,13 @@ class ForecastAdapter :
             itemView.title.text =
                 getForecastDateformat(item.date)
             itemView.weatherType.setImageResource(item.weather.phenomenon.icon())
-            itemView.txtMax.text =item.weather.tempmax?.let {
+            itemView.txtMax.text = item.weather.tempmax?.let {
                 getDegreesRepresentation(
                     itemView.context,
                     item.weather.tempmax
                 )
             }
-            itemView.txtMin.text =item.weather.tempmin?.let {
+            itemView.txtMin.text = item.weather.tempmin?.let {
                 getDegreesRepresentation(
                     itemView.context,
                     item.weather.tempmin

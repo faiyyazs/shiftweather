@@ -11,7 +11,7 @@ import java.util.*
 /**
  * Dialog Fragment to select supported localisation
  * */
-class LocaleSelectorDialogFragment : DialogFragment(){
+class LocaleSelectorDialogFragment : DialogFragment() {
 
 
     private val items = SupportedLanguages.getList()
@@ -19,10 +19,11 @@ class LocaleSelectorDialogFragment : DialogFragment(){
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-        selectedIndex =  SupportedLanguages.getList().indexOf(Locale.getDefault())
+        selectedIndex = SupportedLanguages.getList().indexOf(Locale.getDefault())
 
-        val itemTitles =  getTitlesArray()
-        val builder = AlertDialog.Builder(activity!!,R.style.Theme_MaterialComponents_DayNight_Dialog)
+        val itemTitles = getTitlesArray()
+        val builder =
+            AlertDialog.Builder(activity!!, R.style.Theme_MaterialComponents_DayNight_Dialog)
         builder.setTitle(getString(R.string.language))
             .setPositiveButton(R.string.Ok) { dialog, which ->
                 val activity = activity
@@ -31,10 +32,10 @@ class LocaleSelectorDialogFragment : DialogFragment(){
                         val item = items[selectedIndex]
                         val listener = activity as OnItemSelectedListener
                         listener.onLocaleItemSelected(
-                                    this@LocaleSelectorDialogFragment,
-                                    item,
-                                    selectedIndex
-                                )
+                            this@LocaleSelectorDialogFragment,
+                            item,
+                            selectedIndex
+                        )
                         dismiss()
                     }
                 }
@@ -58,9 +59,9 @@ class LocaleSelectorDialogFragment : DialogFragment(){
         fun onLocaleItemSelected(fragment: LocaleSelectorDialogFragment, item: Locale, index: Int)
     }
 
-    companion object{
-       fun newInstance(): LocaleSelectorDialogFragment {
-           return LocaleSelectorDialogFragment()
+    companion object {
+        fun newInstance(): LocaleSelectorDialogFragment {
+            return LocaleSelectorDialogFragment()
         }
 
     }

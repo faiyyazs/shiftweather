@@ -14,15 +14,15 @@ class DatesAdapter :
     PagerAdapter() {
 
 
-    private val mData =  mutableListOf<WeatherDate>()
+    private val mData = mutableListOf<WeatherDate>()
 
-    fun setDates(dates: List<WeatherDate>){
+    fun setDates(dates: List<WeatherDate>) {
         mData.clear()
         mData.addAll(dates)
         notifyDataSetChanged()
     }
 
-    fun getDates(): List<WeatherDate>{
+    fun getDates(): List<WeatherDate> {
         return mData
     }
 
@@ -33,7 +33,8 @@ class DatesAdapter :
 
     override fun instantiateItem(parent: ViewGroup, position: Int): Any {
         val row = parent.inflate(R.layout.layout_item_date)
-        row.findViewById<AppCompatTextView>(R.id.date).text = getTitleDateFormat(mData[position].date)
+        row.findViewById<AppCompatTextView>(R.id.date).text =
+            getTitleDateFormat(mData[position].date)
         parent.addView(row)
         return row
     }

@@ -22,7 +22,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.concurrent.atomic.AtomicBoolean
 
 class WeatherForecastActivity :
-    BaseActivity<ActivityWeatherforecastBinding, WeatherForecastViewModel>(),ViewPager.OnPageChangeListener {
+    BaseActivity<ActivityWeatherforecastBinding, WeatherForecastViewModel>(),
+    ViewPager.OnPageChangeListener {
 
     /**
      *
@@ -37,7 +38,7 @@ class WeatherForecastActivity :
      *
      * Loading of fragment by lazy to be loaded when used further.
      * */
-    private val weatherDayFragment: WeatherFragment by lazy {  WeatherFragment() }
+    private val weatherDayFragment: WeatherFragment by lazy { WeatherFragment() }
     private val weatherNightFragment: WeatherFragment by lazy { WeatherFragment() }
 
 
@@ -54,7 +55,7 @@ class WeatherForecastActivity :
      *
      * */
     private fun openCities(cities: List<City>): Boolean {
-        startActivity(CityForecastActivity.newIntent(this,cities))
+        startActivity(CityForecastActivity.newIntent(this, cities))
         return true
     }
 
@@ -85,26 +86,24 @@ class WeatherForecastActivity :
             activityModel.getForecastData()
         }
 
-        sharedViewModel.fragmentReloadData.observe(this, Observer {
-           refresh->
-            if(refresh){
+        sharedViewModel.fragmentReloadData.observe(this, Observer { refresh ->
+            if (refresh) {
                 activityModel.getForecastData()
             }
         })
 
-        getViewModel().tabChangeListener.observe(this, Observer {
-            weatherTab->
+        getViewModel().tabChangeListener.observe(this, Observer { weatherTab ->
             updateDataOnTabChange(weatherTab)
         })
 
 
         getViewDataBinding().tabs.addOnTabSelectedListener(
-            object: TabLayout.OnTabSelectedListener{
+            object : TabLayout.OnTabSelectedListener {
                 private var alreadyReselected = AtomicBoolean(false)
 
 
                 override fun onTabReselected(tab: TabLayout.Tab?) {
-                    if  (tab?.position == 0 && !alreadyReselected.getAndSet(true)) onTabSelected(tab)
+                    if (tab?.position == 0 && !alreadyReselected.getAndSet(true)) onTabSelected(tab)
                 }
 
                 override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -133,13 +132,12 @@ class WeatherForecastActivity :
     }
 
     private fun updateDataOnTabChange(weatherTab: WeatherTab?) {
-        if(weatherTab?.position == WeatherTab.DAY.position){
-            openFragment(R.id.fragmentContainer,weatherDayFragment)
-        }else{
-            openFragment(R.id.fragmentContainer,weatherNightFragment)
+        if (weatherTab?.position == WeatherTab.DAY.position) {
+            openFragment(R.id.fragmentContainer, weatherDayFragment)
+        } else {
+            openFragment(R.id.fragmentContainer, weatherNightFragment)
         }
-        getViewModel().weatherForecast.value?.let {
-                presentationData->
+        getViewModel().weatherForecast.value?.let { presentationData ->
             presentationData.data?.let {
                 weatherTab?.let {
                     updateWeatherFragment(presentationData.data)
@@ -150,15 +148,14 @@ class WeatherForecastActivity :
 
     private fun loadContent(resource: Resource<WeatherForecastPresentation>) {
         getViewDataBinding().pullToRefresh.stopRefreshing()
-        resource.data?.let {
-                presentationData ->
+        resource.data?.let { presentationData ->
 
             getViewDataBinding().viewpagerDateSelector.adapter = datesAdapter
             datesAdapter.setDates(resource.data.dates)
 
-            if(datesAdapter.getDates().isNotEmpty()){
+            if (datesAdapter.getDates().isNotEmpty()) {
                 getViewDataBinding().datesHolder.visible()
-            }else{
+            } else {
                 getViewDataBinding().datesHolder.invisible()
             }
 
@@ -166,42 +163,42 @@ class WeatherForecastActivity :
 
                 updateWeatherFragment(presentationData)
 
-                presentationData.cities?.let {
-                        cities->
+                presentationData.cities?.let { cities ->
 
-                    val cityData =  cities.firstOrNull {
-                            city -> city.date ==  it.date
+                    val cityData = cities.firstOrNull { city ->
+                        city.date == it.date
                     }
                     cityData?.let {
-                        cityData.cities?.let {
-                                cityList ->
+                        cityData.cities?.let { cityList ->
                             showCitiesMenu()
-                            getViewDataBinding().toolbar.menu.findItem(R.id.menu_cities).setOnMenuItemClickListener {
-                                openCities(cityList)
-                            }
-                        }?: run {
+                            getViewDataBinding().toolbar.menu.findItem(R.id.menu_cities)
+                                .setOnMenuItemClickListener {
+                                    openCities(cityList)
+                                }
+                        } ?: run {
                             hideCitiesMenu()
                         }
-                    }?:run {
+                    } ?: run {
                         hideCitiesMenu()
                     }
-                }?: run {
+                } ?: run {
                     hideCitiesMenu()
                 }
             })
 
             getViewDataBinding().swipeLeft.setOnClickListener {
-                getViewDataBinding().viewpagerDateSelector.arrowScroll(View.FOCUS_LEFT) }
+                getViewDataBinding().viewpagerDateSelector.arrowScroll(View.FOCUS_LEFT)
+            }
             getViewDataBinding().swipeRight.setOnClickListener {
-                getViewDataBinding().viewpagerDateSelector.arrowScroll(View.FOCUS_RIGHT) }
+                getViewDataBinding().viewpagerDateSelector.arrowScroll(View.FOCUS_RIGHT)
+            }
             getViewDataBinding().viewpagerDateSelector.addOnPageChangeListener(this)
 
-            getViewModel().dateChangeListener.value?.let {
-                    weatherDate->
+            getViewModel().dateChangeListener.value?.let { weatherDate ->
                 val indexOf = datesAdapter.getDates().indexOf(weatherDate)
                 getViewDataBinding().viewpagerDateSelector.currentItem = indexOf
 
-            }?: run {
+            } ?: run {
                 onPageSelected(0)
             }
         }
@@ -219,18 +216,23 @@ class WeatherForecastActivity :
 
 
     private fun updateWeatherFragment(presentationData: WeatherForecastPresentation) {
-        sharedViewModel._fragmentPresentationData.success( getViewModel().loadData(presentationData,getViewModel().tabChangeListener.value))
+        sharedViewModel.fragmentPresentationData.success(
+            getViewModel().loadData(
+                presentationData,
+                getViewModel().tabChangeListener.value
+            )
+        )
     }
 
     private fun showError() {
         getViewDataBinding().pullToRefresh.stopRefreshing()
-        sharedViewModel._fragmentPresentationData.error()
+        sharedViewModel.fragmentPresentationData.error()
     }
 
     private fun showLoading() {
         getViewDataBinding().toolbar.menu.findItem(R.id.menu_cities).isEnabled = false
         getViewDataBinding().pullToRefresh.startRefreshing()
-        sharedViewModel._fragmentPresentationData.loading()
+        sharedViewModel.fragmentPresentationData.loading()
     }
 
     override fun onPageScrollStateChanged(state: Int) {
@@ -245,7 +247,6 @@ class WeatherForecastActivity :
     override fun onPageSelected(position: Int) {
         getViewModel().dateChanged(datesAdapter.getDates()[position])
     }
-
 
 
 }

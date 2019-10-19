@@ -10,20 +10,26 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
 
-class ShiftApplication: Application() {
+class ShiftApplication : Application() {
 
-    init { shiftApplication = this }
+    init {
+        shiftApplication = this
+    }
 
     override fun onCreate() {
         super.onCreate()
         startKoin { androidContext(this@ShiftApplication) }
+        injectFeature()
     }
 
     companion object {
-       lateinit var shiftApplication: ShiftApplication
+        lateinit var shiftApplication: ShiftApplication
             private set
 
-        val applicationContext: Context get() { return shiftApplication.applicationContext }
+        val applicationContext: Context
+            get() {
+                return shiftApplication.applicationContext
+            }
     }
 
     override fun attachBaseContext(base: Context) {
@@ -41,7 +47,8 @@ class ShiftApplication: Application() {
 
     private fun isNetworkAvailable(): Boolean {
         var isConnected = false
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
         if (activeNetwork != null && activeNetwork.isConnected)
             isConnected = true

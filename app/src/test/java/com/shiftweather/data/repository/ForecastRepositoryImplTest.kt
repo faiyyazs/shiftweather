@@ -17,9 +17,10 @@ class ForecastRepositoryImplTest {
 
     private val mockRemoteDataSource: IForecastRemoteDataSource = mock()
 
-    private val remoteItem = listOf(forecast.copy(date = "date"))  //forecasts.copy(forecasts = listOf(forecast))
+    private val remoteItem =
+        listOf(forecast.copy(date = "date"))  //forecasts.copy(forecasts = listOf(forecast))
 
-    private val remoteList = forecasts.copy(forecasts= remoteItem)
+    private val remoteList = forecasts.copy(forecasts = remoteItem)
 
     private val remoteThrowable = Throwable()
 
@@ -43,7 +44,6 @@ class ForecastRepositoryImplTest {
 
         test.assertValue(remoteItem)
     }
-
 
 
     @Test
